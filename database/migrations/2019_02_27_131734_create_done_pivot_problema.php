@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDonePivotPerfil extends Migration
+class CreateDonePivotProblema extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateDonePivotPerfil extends Migration
      */
     public function up()
     {
-        Schema::create('apecti.done_perfil', function (Blueprint $table) {
+        Schema::create('apecti.done_problema', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('perfil');
-            $table->text('atividades');
+            $table->string('problema');
+            $table->string('afeta');
+            $table->text('impacto');
+            $table->text('solucao_esperada');
             $table->integer('done_id')->unsigned()->index();
             $table->foreign('done_id')->references('id')->on('dones')->onDelete('cascade');
+            
         });
     }
 
@@ -30,6 +33,6 @@ class CreateDonePivotPerfil extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apecti.done_perfil');
+        Schema::dropIfExists('apecti.done_problema');
     }
 }

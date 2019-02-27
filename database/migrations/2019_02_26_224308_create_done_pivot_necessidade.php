@@ -13,11 +13,12 @@ class CreateDonePivotNecessidade extends Migration
      */
     public function up()
     {
-        Schema::create('done_necessidade', function (Blueprint $table) {
+        Schema::create('apecti.done_necessidade', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps()->useCurrent();
-            $table->string('necessidade')->nullable(value=false);;
-            $table->text('descricao')->nullable(value=false);;
+            $table->timestamps();
+            $table->string('necessidade');
+            $table->text('descricao');
+            $table->enum('tipo', ['Nova', 'Alteração', 'Exclusão']);
             $table->integer('done_id')->unsigned()->index();
             $table->foreign('done_id')->references('id')->on('dones')->onDelete('cascade');
             
@@ -31,6 +32,6 @@ class CreateDonePivotNecessidade extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('done_necessidade');
+        Schema::dropIfExists('apecti.done_necessidade');
     }
 }

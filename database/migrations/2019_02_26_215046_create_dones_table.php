@@ -13,16 +13,13 @@ class CreateDonesTable extends Migration
      */
     public function up()
     {
-        Schema::create('dones', function (Blueprint $table) {
+        Schema::create('apecti.dones', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps()->useCurrent();
-            $table->string('rastreador_externo')->comment('Pode ser um numero de processo SEI ou da ferramenta onde o DONE será utilizado');
-            $table->string('autor_login')->nullable(value=false);
-            $table->integer('ramal',4)->nullable(value=false);
-            $table->text('introducao')->nullable(value=false);
-            $table->text('necessidade')->nullable(value=false);
-            $table->text('impacto');
-            $table->text('solucao_esperada');
+            $table->timestamps();
+            $table->string('rastreador_externo',50)->comment('Pode ser um numero de processo SEI ou da ferramenta onde o DONE será utilizado');
+            $table->string('autor_login');
+            $table->integer('ramal');
+            $table->text('introducao');
             $table->text('riscos');
             
         });
@@ -35,6 +32,6 @@ class CreateDonesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dones');
+        Schema::dropIfExists('apecti.dones');
     }
 }
