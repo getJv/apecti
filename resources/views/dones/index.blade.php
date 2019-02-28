@@ -15,6 +15,9 @@
 </ul>
 
 <br>
+<div id="root"></div>
+
+
 
 <form >
 
@@ -331,6 +334,7 @@
 </div>
 
 </form>
+
 <!-- Jodit Free Editor: https://bit.ly/2UcRz5s -->
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jodit/3.1.92/jodit.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jodit/3.1.92/jodit.min.js"></script>
@@ -360,5 +364,8 @@
     richEditorGenerator("riscos");
 
 </script>
+
+  <!-- Load our React component. -->
+  <script src="js/reactRoot.js"></script>
 
 @endsection
