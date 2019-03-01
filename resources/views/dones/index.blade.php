@@ -15,7 +15,7 @@
 </ul>
 
 <br>
-<div id="root"></div>
+
 
 
 
@@ -365,7 +365,5 @@
 
 </script>
 
-  <!-- Load our React component. -->
-  <script src="js/reactRoot.js"></script>
 
 @endsection

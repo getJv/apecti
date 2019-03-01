@@ -13,6 +13,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+  
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -71,7 +72,14 @@
       </nav>
 
       <div class="container-fluid">
-      @yield('main')
+      aqui em baixo ta o app
+      <div id="app"></div>  
+        @yield('main')
+      
+
+    
+
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -79,14 +87,12 @@
   </div>
   <!-- /#wrapper -->
 
+
+  <script src="{{mix('js/app.js')}}" type="text/javascript"></script>
+  <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
   <!-- Bootstrap core JavaScript -->
   <script src="js/jquery/jquery.min.js"></script>
   <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-
-  <!-- Load React. -->
-  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
   <!-- Menu Toggle Script -->
   <script>
