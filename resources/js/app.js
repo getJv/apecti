@@ -7,6 +7,7 @@
 
 require('./bootstrap');
 
+
 window.Vue = require('vue');
 
 /**
@@ -17,12 +18,11 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+ const files = require.context('./', true, /\.vue$/i);
+ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('pokemon-list-component', require('./components/PokemonListComponent.vue').default);
-Vue.component('pokemon-add-button-component', require('./components/PokemonAddButtonComponent.vue').default);
-Vue.component('pokemon-form-component', require('./components/PokemonFormComponent.vue').default);
+//Vue.component('pokemon-list-component', require('./components/PokemonListComponent.vue').default);
+
 
 
 /**

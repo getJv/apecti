@@ -2,27 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Pokemon;
+use App\LandingPage;
+use App\PlaceHolderUser;
 use Illuminate\Http\Request;
 
-
-class PokemonController extends Controller
+class LandingPageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        if($request->ajax()){
-            $pokemons = Pokemon::all();
-            
-            return response()->json($pokemons,200);
+                
+         $users = PlaceHolderUser::all();
 
-        }
-        return view('pokemons.index');
+         return view('landing-pages.index',compact('users'));
     }
+
+    public function getUsers()
+    {
+                
+         $users = PlaceHolderUser::all();
+
+         return \Response::json($users,200);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -31,7 +37,7 @@ class PokemonController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -42,27 +48,16 @@ class PokemonController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->ajax()){
-
-            $p = new Pokemon();
-            $p->name= $request->input('name');
-            $p->picture= $request->input('picture');
-            $p->save();
-
-            return response()->json([
-                "mesage"    => "Pokemon criado",
-                "pokemon"   => $p  
-            ],200);
-        }
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pokemon  $pokemon
+     * @param  \App\LandingPage  $landingPage
      * @return \Illuminate\Http\Response
      */
-    public function show(Pokemon $pokemon)
+    public function show(LandingPage $landingPage)
     {
         //
     }
@@ -70,10 +65,10 @@ class PokemonController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pokemon  $pokemon
+     * @param  \App\LandingPage  $landingPage
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pokemon $pokemon)
+    public function edit(LandingPage $landingPage)
     {
         //
     }
@@ -82,10 +77,10 @@ class PokemonController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pokemon  $pokemon
+     * @param  \App\LandingPage  $landingPage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pokemon $pokemon)
+    public function update(Request $request, LandingPage $landingPage)
     {
         //
     }
@@ -93,10 +88,10 @@ class PokemonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pokemon  $pokemon
+     * @param  \App\LandingPage  $landingPage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pokemon $pokemon)
+    public function destroy(LandingPage $landingPage)
     {
         //
     }

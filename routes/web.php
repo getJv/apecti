@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/phpinfo', function () {
+    return view('phpinfo');
 });
 
-Route::resource('pokemons','PokemonController');
+Route::get('/','LandingPageController@index');
+Route::get('/api/users','LandingPageController@getUsers');

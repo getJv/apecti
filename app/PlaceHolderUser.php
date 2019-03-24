@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pokemon extends Model
+class PlaceHolderUser extends Model
 {
-
-     
+    //
 }
