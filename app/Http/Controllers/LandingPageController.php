@@ -16,7 +16,7 @@ class LandingPageController extends Controller
     public function index()
     {
                 
-         $users = PlaceHolderUser::all();
+         $users = json_encode([ ['id'=>'1','name'=>'jhonatan'],['id'=>'2','name'=>'morais'] ] ); //PlaceHolderUser::all();
 
          return view('landing-pages.index',compact('users'));
     }

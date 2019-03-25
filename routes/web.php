@@ -16,4 +16,8 @@ Route::get('/phpinfo', function () {
 });
 
 Route::get('/','LandingPageController@index');
-Route::get('/api/users','LandingPageController@getUsers');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
